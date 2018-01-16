@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" fx:id="main_pane" onMouseDragged="#mouseDragged" onMousePressed="#mousePresses" prefHeight="380.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="advancedmusicplayer.Controller">
+    <children>
+        <ImageView fx:id="back_img" fitHeight="381.0" fitWidth="750.0" layoutY="-1.0" onMouseClicked="#releaseBox" pickOnBounds="true">
+            <image>
+                <Image url="@res/newback.jpg" />
+            </image>
+         <effect>
+            <GaussianBlur radius="43.41" />
+         </effect>
+        </ImageView>
+        <Rectangle fx:id="title_bar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="27.0" layoutY="-1.0" opacity="0.14" stroke="WHITE" strokeType="INSIDE" width="750.0" />
+        <Circle fx:id="close_window" fill="#f18379" layoutX="20.0" layoutY="13.0" onMouseClicked="#close_window" radius="6.0" stroke="#f18379" strokeType="INSIDE" />
+        <Circle fx:id="minimise_window" fill="#babf60" layoutX="37.0" layoutY="13.0" onMouseClicked="#minimiseThisWindow" radius="6.0" stroke="#babf60" strokeType="INSIDE" />
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="61.0" layoutY="319.0" opacity="0.23" stroke="#fefeff" strokeType="INSIDE" width="750.0" />
+        <ImageView fx:id="album_art" fitHeight="251.0" fitWidth="241.0" layoutX="26.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/placeholder.png" />
+            </image>
+         <effect>
+            <DropShadow />
+         </effect>
+        </ImageView>
+        <ImageView fx:id="play_pause" fitHeight="61.0" fitWidth="116.0" layoutY="319.0" onMouseClicked="#play_pause_btn" pickOnBounds="true" preserveRatio="true" styleClass="play_pause_btn">
+            <image>
+                <Image url="@res/video-play-icon.png" />
+            </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </ImageView>
+        <Text fx:id="m_title" fill="WHITE" layoutX="352.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Play any music">
+            <font>
+                <Font name="Nunito Bold" size="22.0" />
+            </font>
+         <effect>
+            <Glow />
+         </effect>
+        </Text>
+        <Text fx:id="media_artist" fill="#ffe4e4" layoutX="352.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist name">
+            <font>
+                <Font name="Nunito SemiBold" size="14.0" />
+            </font>
+        </Text>
+        <Text fx:id="media_year" fill="#ffe4e4" layoutX="354.0" layoutY="156.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Year">
+         <font>
+            <Font name="Nunito SemiBold" size="14.0" />
+         </font></Text>
+        <Slider fx:id="time_slider" layoutX="62.0" layoutY="329.0" prefHeight="41.0" prefWidth="605.0" />
+        <ImageView fx:id="volume_btn" fitHeight="54.0" fitWidth="61.0" layoutX="673.0" layoutY="323.0" onMouseClicked="#volumeControl" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/volup.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="61.0" fitWidth="61.0" layoutX="283.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@res/icon.png" />
+            </image>
+         <effect>
+            <DropShadow color="#b9b3b3" />
+         </effect>
+        </ImageView>
+        <Rectangle fx:id="vol_rect" arcHeight="5.0" arcWidth="5.0" fill="#fff9f9" height="139.0" layoutX="669.0" layoutY="180.0" opacity="0.16" stroke="#4d4646" strokeType="INSIDE" width="61.0" />
+        <Slider fx:id="vol_slider" layoutX="669.0" layoutY="179.0" orientation="VERTICAL" prefHeight="140.0" prefWidth="61.0" style="-fx-control-inner-background: grey;" value="50.0" />
+        <Text fill="WHITE" layoutX="594.0" layoutY="17.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Made by Jay Prakash Pathak" />
+      <ImageView fitHeight="41.0" fitWidth="54.0" layoutX="696.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@res/logo.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0000001b" height="27.0" layoutX="352.0" layoutY="185.0" onMouseClicked="#open_file" stroke="WHITE" strokeType="INSIDE" width="107.0" />
+      <Text fill="WHITE" layoutX="362.0" layoutY="203.0" onMouseClicked="#open_file" strokeType="OUTSIDE" strokeWidth="0.0" text="Open music file">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fx:id="media_album" fill="#ffe4e4" layoutX="352.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Album">
+         <font>
+            <Font name="Nunito SemiBold" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="media_genera" fill="#ffe4e4" layoutX="352.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Genera">
+         <font>
+            <Font name="Nunito SemiBold" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="media_composer" fill="#ffe4e4" layoutX="352.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Composer">
+         <font>
+            <Font name="Nunito SemiBold" size="14.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>
